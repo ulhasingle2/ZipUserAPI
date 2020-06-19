@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+    ms-sql-server:
+      image: mcr.microsoft.com/mssql/server:2017-latest         
+      environment:
+         ACCEPT_EULA: "Y"
+         SA_PASSWORD: "Passw0rd@2019"
+         MSSQL_PID: Express
+      ports:
+        - "1433:1433"
+    zipuserapi-api:
+      build: .
+      ports:
+      - "8080:80" 
